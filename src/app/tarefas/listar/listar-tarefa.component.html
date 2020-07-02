@@ -1,0 +1,35 @@
+
+
+
+
+<div class="centralizar">
+    <table>
+        <tbody>
+            <tr>
+                <td>  </td>
+                <td> <input type="text" 
+                            class="campo" 
+                            maxlength="10" 
+                            minlength="3"
+                            required> </td>
+                <td> <button type="button" class="botao">+</button> </td>
+            </tr>
+            <tr *ngFor="let tarefa of tarefas">
+                <td> <input type="checkbox" [value]="tarefa.id" [checked]="tarefa.concluida" > </td>
+                <td> <p> {{ tarefa.nome }} </p> </td>
+                <td> <button type="button" class="botao" (click)="removerTarefa( tarefa.id )"> Excluir </button> </td>
+            </tr>
+            <tr *ngIf="tarefas.length==0">
+                <td></td>
+                <td> <p> *Sem tarefas.</p> </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td> <a [routerLink]="['/tarefas/teste']">Adicionar</a> </td>
+                <td></td>
+            </tr>
+        </tbody>        
+    </table>       
+</div>
+

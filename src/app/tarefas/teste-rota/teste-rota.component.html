@@ -1,0 +1,17 @@
+
+<form #formTarefa="ngForm">
+    <h3> é somente uma rota teste </h3>    
+    <input  type="text" 
+            minlength="3" 
+            maxlength="15"
+            required
+            name="nome"
+            [(ngModel)]="tarefa.nome"
+            #nome="ngModel">                       
+    <input  type="button" 
+            value="Salvar"
+            (click)="cadastrar()">
+            <br>
+            <br>
+    <a [routerLink]="['/tarefas/listar']">Lista</a>
+</form>
